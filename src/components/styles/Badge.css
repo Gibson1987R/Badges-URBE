@@ -47,3 +47,11 @@
   font-weight: bold;
   font-style: italic;
 }
+
+.Badge__hero-1 {
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  height: 4em;
+  overflow: hidden;
+  object-fit: cover;
+}

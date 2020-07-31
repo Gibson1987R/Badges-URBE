@@ -18,4 +18,16 @@
 
 .Navbar__brand-logo {
   margin-right: 0.5rem;
+  border-radius: 50%;
+  height: 3em;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.Navbar__brand-logo1 {
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  height: 7em;
+  overflow: hidden;
+  object-fit: cover;
 }
