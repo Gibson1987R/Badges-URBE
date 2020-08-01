@@ -16,7 +16,7 @@ class BadgeNew extends React.Component{
         <div className='container'>
           <div className= 'row'>
             <div className = 'col'>
-              <Badge firstName='Gibson' lastName='Rosales' twiter='RosalesGibson' jobTitle='Profesor y Administrador' avatar='https://s.gravatar.com/avatar/dd18a220fc4d5d1191bf6432435c4d3f?s=80'/>
+              <Badge firstName='Gibson' lastName='Rosales' twiter='RosalesGibson' jobTitle='Profesor y Administrador' avatarUrl='https://s.gravatar.com/avatar/dd18a220fc4d5d1191bf6432435c4d3f?s=80'/>
             </div>
           </div>
 
