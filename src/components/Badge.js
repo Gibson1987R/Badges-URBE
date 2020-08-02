@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles/Badge.css'
-import Logo from '../images/Logo-URBE2.png';
+import Logo from '../images/logo-urbe4.svg';
 class Badge extends React.Component {
   render() {    
     return(

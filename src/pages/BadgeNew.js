@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './styles/BadgeNew.css'
-import URBE2 from '../images/Logo-URBE2.png';
-import Navbar from '../components/Navbar';
+import URBE2 from '../images/logo-urbe3.svg';
+
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
@@ -26,10 +26,11 @@ class BadgeNew extends React.Component{
   
   render(){
     return(
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className='BadgeNew__hero'>
-          <img className='img-fluid BadgeNew__hero-1' src ={URBE2} alt= 'Logo'/>
+          <img 
+          className='img-fluid BadgeNew__hero-1' 
+          src ={URBE2} alt= 'Logo'/>
         </div>
         <div className='container'>
           <div className= 'row'>
@@ -51,7 +52,7 @@ class BadgeNew extends React.Component{
           </div>
 
         </div>
-      </div>
+      </React.Fragment>
     )
   }  
 }
