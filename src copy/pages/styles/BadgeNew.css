@@ -5,14 +5,4 @@
   background-repeat: repeat;
   margin-bottom: 1rem;
   color: #ffffff;
-  display: flex;
-  justify-content: center;
-}
-
-.BadgeNew__hero-1 {
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  height: 7em;
-  overflow: hidden;
-  object-fit: cover;
 }
