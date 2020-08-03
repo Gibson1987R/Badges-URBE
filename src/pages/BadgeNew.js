@@ -1,10 +1,11 @@
 import React from 'react';
 
 import './styles/BadgeNew.css'
-import URBE2 from '../images/logo-urbe3.svg';
+import URBE2 from '../images/logo-urbe8.svg';
 
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
+import api from '../api';
 
 class BadgeNew extends React.Component{
   state = { form:{
@@ -23,6 +24,19 @@ class BadgeNew extends React.Component{
       }
     })
   }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    this.setState({loading: true, error: null})
+
+    try{
+      await api.badges.create(this.state.form)
+      this.setState({loading: false })
+    } catch(error) {
+      this.setState({loading: false, error: error})
+    }
+
+  }
   
   render(){
     return(
@@ -36,16 +50,17 @@ class BadgeNew extends React.Component{
           <div className= 'row'>
             <div className = 'col-6'>
               <Badge 
-              firstName={this.state.form.firstName} 
-              lastName={this.state.form.lastName} 
-              twitter={this.state.form.twitter} 
-              jobTitle={this.state.form.jobTitle}
-              email={this.state.form.email} 
+              firstName={this.state.form.firstName || 'FIRST_NAME'} 
+              lastName={this.state.form.lastName || 'LAST_NAME'} 
+              twitter={this.state.form.twitter || 'TWITTER'} 
+              jobTitle={this.state.form.jobTitle || 'JOB_TITLE'}
+              email={this.state.form.email || 'EMAIL'} 
               avatarUrl='https://s.gravatar.com/avatar/dd18a220fc4d5d1191bf6432435c4d3f?s=80'/>
             </div>
             <div className= 'col-6'>
               <BadgeForm 
               onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
               formValues ={this.state.form}
               />
             </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 
 import './styles/Badge.css'
-import Logo from '../images/logo-urbe4.svg';
+import Logo from '../images/logo-urbe8.svg';
+import Gravatar from './Gravatar';
+
 class Badge extends React.Component {
   render() {    
     return(
@@ -10,9 +12,13 @@ class Badge extends React.Component {
           <img className='Badge__hero-1'src={Logo} alt= 'Logo de la conferencia'/>
         </div>
         <div className='Badge__section-name'>
-          <img 
+          <Gravatar
           className='Badge__avatar'
-          src={this.props.avatarUrl} alt= 'Avatar'/>
+          email = {this.props.email} 
+          alt= 'Avatar'/>
+          {/* <img 
+          className='Badge__avatar'
+          src={this.props.avatarUrl} alt= 'Avatar'/> */}
           <h1>{this.props.firstName} <br/> {this.props.lastName}</h1>
         </div>
         <div className='Badge__section-info'>

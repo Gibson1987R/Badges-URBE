@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 
 import './styles/Navbar.css';
-import logoBlanco from '../images/Logo-URBE.PNG';
+import logoBlanco from '../images/logo-urbe3.svg';
 class Navbar extends React.Component{
   render(){
     return(

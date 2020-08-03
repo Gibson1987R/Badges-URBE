@@ -440,6 +440,30 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Anaís María",
+      "lastName": "Pérez Zambrano",
+      "email": "votosdeamor2012@hotmail.com",
+      "jobTitle": "Médico",
+      "twitter": "Anaís_María",
+      "id": "uHT5UY-"
+    },
+    {
+      "firstName": "Gibson",
+      "lastName": "Rosales",
+      "email": "gibsonrosales@gmail.com",
+      "jobTitle": "Profesor y Administrador",
+      "twitter": "RosalesGibson",
+      "id": "QmuHhqz"
+    },
+    {
+      "firstName": "Sebastian",
+      "lastName": "Huertado",
+      "email": "sebassdc@gmail.com",
+      "jobTitle": "Full -Stack Developer",
+      "twitter": "sebassdc",
+      "id": "mVIeSo5"
     }
   ]
 }
