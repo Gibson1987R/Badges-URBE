@@ -17,15 +17,16 @@ const api = {
       window.localStorage.setItem(id, JSON.stringify(badgeWithId));
     },
     read(id) {
-      return JSON.parse(window.localStorage.getItem(id) || '');
+      return JSON.parse(window.localStorage.getItem(id) || 'null');
     },
     update(id, updates) {
-      const oldBadge = JSON.parse(window.localStorage.getItem(id) || '');
+      const oldBadge = window.localStorage.getItem(id);
+      const oldBadgeParsed = JSON.parse(oldBadge);
       const newBadge = {
-        ...oldBadge,
+        ...oldBadgeParsed,
         ...updates,
       };
-      window.localStorage.setItem(id, newBadge);
+      window.localStorage.setItem(id, JSON.stringify(newBadge));
     },
     remove(id) {
       window.localStorage.removeItem(id);
