@@ -6,17 +6,7 @@ import URBE2 from '../images/logo-urbe8.svg';
 import Badge from '../components/Badge';
 import DeleteBadgeModal from '../components/DeleteBadgeModal';
 
-// function useIncreaseCount(max) {
-//   const [ count, setCount ] = React.useState(0);
-//   if (count> max) {
-//     setCount(0)
-//   };
-
-//   return [count, setCount];
-// } era para mirar como funcionaban los hook
-
 function BadgeDetails (props) {
-  // const [ count, setCount ] = useIncreaseCount(5); era para la practica de los hook
   const badge = props.badge;
   return (
     <div>
@@ -38,18 +28,13 @@ function BadgeDetails (props) {
               <Badge firstName={badge.firstName} lastName={badge.lastName} email={badge.email} twitter ={badge.twitter} jobTitle={badge.jobTitle} />
             </div>
             <div className="col">
-              <h2>Actions</h2>
+              <h2>Acciones</h2>
               <div>
                 <div>
-                  {/* <button onClick={()=>{
-                    setCount(count + 1)
-                  }} className='btn btn-primary mr-3'>
-                  Increase Count :{count}
-                  </button> era para la practica de los hook*/}
-                  <Link className='btn btn-primary mb-4' to ={`/badges/${badge.id}/edit`}>Edit</Link>
+                  <Link className='btn btn-primary mb-4' to ={`/badges/${badge.id}/edit`}>Editar</Link>
                 </div>
                 <div>
-                  <button onClick={props.onOpenModal} className ='btn btn-danger'>Delete</button>
+                  <button onClick={props.onOpenModal} className ='btn btn-danger'>Eliminar</button>
                   <DeleteBadgeModal 
                   isOpen={props.modalIsOpen} 
                   onClose={props.onCloseModal}

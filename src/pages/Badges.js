@@ -61,9 +61,9 @@ class Badges extends React.Component {
         </div>
 
         <div className="Badges_-container">
-          <div className="Badges__buttons">
+          <div className="Badges__buttons mr-4">
             <Link to="/badges/new" className="btn btn-primary">
-              New Badge
+              Nuevo Badge
             </Link>
           </div>
 
