@@ -1,53 +1,34 @@
-const BASE_URL = 'http://localhost:3001';
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-const randomNumber = (min = 0, max = 1) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
-const simulateNetworkLatency = (min = 30, max = 1500) =>
-  delay(randomNumber(min, max));
-
-async function callApi(endpoint, options = {}) {
-  await simulateNetworkLatency();
-
-  options.headers = {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-  };
-
-  const url = BASE_URL + endpoint;
-  const response = await fetch(url, options);
-  const data = await response.json();
-
-  return data;
-}
+import faker from 'faker';
 
 const api = {
   badges: {
     list() {
-      // throw new Error('500: Server Error');
-      return callApi('/badges');
+      const badges = Object.values(window.localStorage);
+      const parsedBadges = badges.map((e) => JSON.parse(e));
+      console.log('api > list > parsedBadges: ', parsedBadges);
+      return parsedBadges;
     },
     create(badge) {
-      // throw new Error('500: Server error');
-      return callApi(`/badges`, {
-        method: 'POST',
-        body: JSON.stringify(badge),
-      });
+      const id = faker.random.uuid();
+      const badgeWithId = {
+        id,
+        ...badge,
+      };
+      window.localStorage.setItem(id, JSON.stringify(badgeWithId));
     },
-    read(badgeId) {
-      return callApi(`/badges/${badgeId}`);
+    read(id) {
+      return JSON.parse(window.localStorage.getItem(id) || '');
     },
-    update(badgeId, updates) {
-      return callApi(`/badges/${badgeId}`, {
-        method: 'PUT',
-        body: JSON.stringify(updates),
-      });
+    update(id, updates) {
+      const oldBadge = JSON.parse(window.localStorage.getItem(id) || '');
+      const newBadge = {
+        ...oldBadge,
+        ...updates,
+      };
+      window.localStorage.setItem(id, newBadge);
     },
-    // Lo hubiera llamado `delete`, pero `delete` es un keyword en JavaScript asi que no es buena idea :P
-    remove(badgeId) {
-      return callApi(`/badges/${badgeId}`, {
-        method: 'DELETE',
-      });
+    remove(id) {
+      window.localStorage.removeItem(id);
     },
   },
 };
