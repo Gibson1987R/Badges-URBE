@@ -65,9 +65,9 @@ function BadgesList (props) {
               }}
             />
           </div>
-          <h3> No badges were found</h3>
+          <h3> No encontramos ningún badges</h3>
           <Link className="btn btn-primary" to="/badges/new">
-            Create new badge
+            Crea un nuevo badge
           </Link>
         </div>
       );
