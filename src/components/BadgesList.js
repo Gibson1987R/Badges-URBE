@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Gravatar from './Gravatar'
+import Gravatar from './Gravatar';
 import './styles/BadgesList.css';
 
 class BadgesListItem extends React.Component {
-  render() {    
+  render() {
     return (
       <div className="BadgesListItem">
         <Gravatar
           className="BadgesListItem__avatar"
           email={this.props.badge.email}
-          alt={`${this.props.badge.firstName} 
+          alt={`${this.props.badge.firstName}
           ${this.props.badge.lastName}`}
         />
 
@@ -66,11 +66,11 @@ function BadgesList (props) {
             />
           </div>
           <h3> No badges were found</h3>
-          <Link className ='btn btn-primary' to='/badges/new'>
+          <Link className="btn btn-primary" to="/badges/new">
             Create new badge
           </Link>
         </div>
-      )
+      );
     }
     return (
       <div className="BadgesList">
@@ -98,4 +98,4 @@ function BadgesList (props) {
     );
 }
 
-export default BadgesList
+export default BadgesList;
