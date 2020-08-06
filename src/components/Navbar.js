@@ -10,7 +10,7 @@ class Navbar extends React.Component{
         <div className = 'container-fluid'>  
           <Link className='Navbar__brand' to ='/'>
             <img className='Navbar__brand-logo' src={logoBlanco} alt='logo'/>
-            <span className='font-weight-light '>URBE-CONF</span>
+            <span className='font-weight-light '>URBE</span>
             <span className='font-weight-bold'>-CONF</span>
           </Link>
         </div>

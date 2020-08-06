@@ -16,9 +16,6 @@ class Badge extends React.Component {
           className='Badge__avatar'
           email = {this.props.email} 
           alt= 'Avatar'/>
-          {/* <img 
-          className='Badge__avatar'
-          src={this.props.avatarUrl} alt= 'Avatar'/> */}
           <h1>{this.props.firstName} <br/> {this.props.lastName}</h1>
         </div>
         <div className='Badge__section-info'>

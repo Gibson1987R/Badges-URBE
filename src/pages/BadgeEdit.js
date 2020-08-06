@@ -84,7 +84,7 @@ class BadgeEdit extends React.Component{
               avatarUrl='https://s.gravatar.com/avatar/dd18a220fc4d5d1191bf6432435c4d3f?s=80'/>
             </div>
             <div className= 'col-6'>
-              <h1>Edit Attendant</h1>
+              <h1>Editar Asistente</h1>
               <BadgeForm 
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}

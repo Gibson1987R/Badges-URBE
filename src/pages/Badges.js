@@ -6,6 +6,7 @@ import conflogo from '../images/logo-urbe-header.svg';
 import BadgesList from '../components/BadgesList';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
+import MiniLoader from '../components/MiniLoader';
 
 import api from '../api';
 
@@ -14,9 +15,15 @@ class Badges extends React.Component {
     loading: true,
     error: null,
     data: undefined,
-  };
-  componentDidMount() {
+  };  
+  componentDidMount () {
     this.fetchData();
+
+    this.intercalId = setInterval(this.fetchData, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
   }
 
   fetchData = async () => {
@@ -30,9 +37,9 @@ class Badges extends React.Component {
     }
   };
 
-  render() {
-    if (this.state.loading === true) {
-      return <PageLoading />;
+  render(){
+    if(this.state.loading === true && !this.state.data) {
+      return <PageLoading/>;
     }
 
     if (this.state.error) {
@@ -54,15 +61,16 @@ class Badges extends React.Component {
         </div>
 
         <div className="Badges_-container">
-          <div className="Badges__buttons">
+          <div className="Badges__buttons mr-4">
             <Link to="/badges/new" className="btn btn-primary">
-              New Badge
+              Nuevo Badge
             </Link>
           </div>
 
-          <div className="Badges__list">
-            <div className="Badges__container">
-              <BadgesList badges={this.state.data} />
+          <div className='Badges__list'>
+            <div className= 'Badges__container'>
+              <BadgesList badges ={this.state.data}/>
+              {this.state.loading && <MiniLoader />}
             </div>
           </div>
         </div>
